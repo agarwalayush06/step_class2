@@ -1,7 +1,6 @@
-public class HelloApp5 {
+public class HelloApp6 {
 
-
-    public class HelloApp {
+public class HelloApp {
 
     public static void main(String[] args) {
 
@@ -12,20 +11,19 @@ public class HelloApp5 {
         } else {
 
             StringBuilder nameBuilder = new StringBuilder();
-            boolean first = true;
 
             for (String name : args) {
-                if (!first) {
-                    nameBuilder.append(", ");
-                }
-                nameBuilder.append(name);
-                first = false;
+                nameBuilder.append(name).append(", ");
             }
 
-            result = nameBuilder.toString();
+            if (nameBuilder.length() > 0) {
+                result = nameBuilder.substring(0, nameBuilder.length() - 2);
+            } else {
+                result = "";
+            }
         }
 
         System.out.println("Hello, " + result + "!");
     }
-}
+}    
 }
